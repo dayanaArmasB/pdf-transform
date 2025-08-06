@@ -1,0 +1,103 @@
+
+<h2>Formulario de Contrato</h2>
+
+<form #formulario="ngForm" (ngSubmit)="descargarContrato()">
+  <label for="arrendador">Nombre del arrendador:</label>
+  <input 
+  id="arrendador" 
+  type="text" 
+  pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}"
+  title="Solo letras y espacios"
+  [(ngModel)]="contrato.arrendador" 
+  name="arrendador"
+  required minlength="3"
+  #arrendadorRef="ngModel" 
+  placeholder="Ej. Juan Pérez" />
+  <div class="error" *ngIf="arrendadorRef.invalid && arrendadorRef.touched">
+  <span *ngIf="arrendadorRef.errors?.['required']">Este campo es obligatorio.</span>
+  <span *ngIf="arrendadorRef.errors?.['minlength']">Mínimo 3 caracteres.</span>
+  <span *ngIf="arrendadorRef.errors?.['pattern']">Solo se permiten letras y espacios.</span>
+  </div>
+
+  <label for="arrendatario">Nombre del arrendatario:</label>
+  <input 
+  id="arrendatario" 
+  type="text" 
+  pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}"
+  title="Solo letras y espacios"
+  [(ngModel)]="contrato.arrendatario" 
+  name="arrendatario" 
+  required minlength="3"
+  #arrendatarioRef="ngModel" 
+  placeholder="Ej. Juan Pérez" />
+  <div class="error" *ngIf="arrendatarioRef.invalid && arrendatarioRef.touched">
+  <span *ngIf="arrendatarioRef.errors?.['required']">Este campo es obligatorio.</span>
+  <span *ngIf="arrendatarioRef.errors?.['minlength']">Mínimo 3 caracteres.</span>
+  <span *ngIf="arrendatarioRef.errors?.['pattern']">Solo se permiten letras y espacios.</span>
+  </div>
+
+  <label for="direccion">Dirección del inmueble:</label>
+  <input
+  id="direccion" 
+  type="text" 
+  [(ngModel)]="contrato.direccion" 
+  name="direccion" 
+  required minlength="3"
+  #direccionRef="ngModel" 
+  placeholder="Ej. Juan Pérez" />
+  <div class="error" *ngIf="direccionRef.invalid && direccionRef.touched">
+  <span *ngIf="direccionRef.errors?.['required']">Este campo es obligatorio.</span>
+  <span *ngIf="direccionRef.errors?.['minlength']">Mínimo 3 caracteres.</span>
+  </div>
+
+  <label for="monto">Monto del alquiler (S/):</label>
+  <input 
+  id="monto" 
+  type="number" 
+  [(ngModel)]="contrato.monto" 
+  name="monto" 
+  required min="1"
+  #montoRef="ngModel"
+  placeholder="Ej. 1500"
+  />
+  <div class="error" *ngIf="montoRef.invalid && montoRef.touched">
+    <span *ngIf="montoRef.errors?.['required']">El monto es obligatorio.</span>
+    <span *ngIf="montoRef.errors?.['min']">Debe ser mayor a 0.</span>
+  </div>
+
+  <label for="fechaInicio">Fecha de inicio:</label>
+  <input
+  id="fechaInicio"
+  type="date"
+  name="fechaInicio"
+  [(ngModel)]="contrato.fechaInicio"
+  [min]="hoy"
+  #fechaRef="ngModel"
+  required
+/>
+<div class="error" *ngIf="fechaRef.invalid && fechaRef.touched">
+  <span *ngIf="fechaRef.errors?.['required']">La fecha es obligatoria.</span>
+</div>
+
+  <label for="duracion">Duración (meses):</label>
+  <input 
+  id="duracion" 
+  type="number" [(ngModel)]="contrato.duracion" 
+  name="duracion" 
+  required min="1"
+  #duracionRef="ngModel"
+  placeholder="Ej. 1"
+  />
+  <div class="error" *ngIf="duracionRef.invalid && duracionRef.touched">
+    <span *ngIf="duracionRef.errors?.['required']">La duracion es obligatorio.</span>
+    <span *ngIf="duracionRef.errors?.['min']">Debe ser mayor a 0.</span>
+  </div>
+
+  <button type="submit" [disabled]="formulario.invalid" class="btn-descargar">
+    📄 Descargar Contrato
+  </button>
+
+</form>
+
+
+

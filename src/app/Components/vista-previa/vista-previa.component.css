@@ -1,0 +1,53 @@
+/* contrato.component.css */
+
+.contrato-preview {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 30px;
+  color: #000;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  color: #3a5e81;
+}
+
+.contrato-preview p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.contrato-preview strong {
+  font-weight: bold;
+}
+
+.firma {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.firma p {
+  text-align: center;
+  width: 40%;
+}
+
+.firma p::before {
+  content: '';
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 100%;
+  border-top: 1px solid #000;
+}
