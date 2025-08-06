@@ -1,0 +1,27 @@
+[
+  {
+    "id": "arrendamiento",
+    "nombre": "Contrato de Arrendamiento",
+    "descripcion": "Establece los términos entre el arrendador y el arrendatario.",
+    "campos": [
+      { "nombre": "arrendador", "tipo": "texto", "etiqueta": "Nombre del arrendador", "requerido": true },
+      { "nombre": "arrendatario", "tipo": "texto", "etiqueta": "Nombre del arrendatario", "requerido": true },
+      { "nombre": "direccion", "tipo": "texto", "etiqueta": "Dirección del inmueble", "requerido": true },
+      { "nombre": "monto", "tipo": "numero", "etiqueta": "Monto del alquiler", "requerido": true },
+      { "nombre": "fechaInicio", "tipo": "fecha", "etiqueta": "Fecha de inicio", "requerido": true },
+      { "nombre": "duracion", "tipo": "numero", "etiqueta": "Duración (meses)", "requerido": true }
+    ]
+  },
+  {
+    "id": "compraventa",
+    "nombre": "Contrato de Compraventa",
+    "descripcion": "Formaliza la compraventa de un bien entre comprador y vendedor.",
+    "campos": [
+      { "nombre": "vendedor", "tipo": "texto", "etiqueta": "Nombre del vendedor", "requerido": true },
+      { "nombre": "comprador", "tipo": "texto", "etiqueta": "Nombre del comprador", "requerido": true },
+      { "nombre": "bien", "tipo": "texto", "etiqueta": "Descripción del bien", "requerido": true },
+      { "nombre": "precio", "tipo": "numero", "etiqueta": "Precio del bien", "requerido": true },
+      { "nombre": "fecha", "tipo": "fecha", "etiqueta": "Fecha del contrato", "requerido": true }
+    ]
+  }
+]

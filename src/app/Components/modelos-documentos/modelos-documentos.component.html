@@ -1,1 +1,10 @@
-<p>modelos-documentos works!</p>
+<h2 class="titulo-modelos">Modelos de Documentos</h2>
+
+<div class="modelos-container">
+  <div class="modelo-card" *ngFor="let modelo of modelos">
+    <h3>{{ modelo.nombre }}</h3>
+    <p>{{ modelo.descripcion }}</p>
+    <button (click)="verModelo(modelo.id)">Ver Detalles</button>
+  </div>
+</div>
+
