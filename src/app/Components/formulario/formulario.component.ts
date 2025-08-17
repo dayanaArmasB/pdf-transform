@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, NgModule, ViewChild } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { Component, Input, ViewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { VistaPreviaComponent } from '../vista-previa/vista-previa.component';
+import { DocumentoStateService } from '../../services/documento-state.service';
 
 @Component({
   selector: 'app-formulario',
@@ -13,29 +14,40 @@ import { VistaPreviaComponent } from '../vista-previa/vista-previa.component';
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent {
- @Input() contrato: any;
-  @ViewChild(VistaPreviaComponent) vistaPreviaComponent!: VistaPreviaComponent;
+campos: { label: string; value: string }[] = [];
+  contenido: string = '';
 
-  hoy = new Date().toISOString().split('T')[0];
+  constructor(private documentoState: DocumentoStateService) {}
 
+  ngOnInit() {
+    this.documentoState.campos$.subscribe(data => this.campos = [...data]);
+    this.documentoState.contenido$.subscribe(text => this.contenido = text);
+  }
 
-    descargarContrato() {
-  const contratoElement = document.getElementById('contrato-pdf');
+  onFieldChange(index: number, newValue: string) {
+    this.campos[index].value = newValue;
+    this.documentoState.setCampos(this.campos);
+  }
 
-  if (!contratoElement) return;
+  onTextChange(newText: string) {
+    this.contenido = newText;
+    this.documentoState.setContenido(newText);
+  }
 
-  html2canvas(contratoElement).then(canvas => {
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF('p', 'mm', 'a4');
+  descargarContrato() {
+    const contratoElement = document.getElementById('contrato-pdf');
+    if (!contratoElement) return;
 
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+    html2canvas(contratoElement).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('contrato-arrendamiento.pdf');
-  });
-}
-
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('documento.pdf');
+    });
+  }
 
 }
 

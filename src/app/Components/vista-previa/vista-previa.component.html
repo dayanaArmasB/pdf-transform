@@ -1,29 +1,25 @@
-<h2 class="title">Vista previa del contrato</h2>
-<div  id="contrato-pdf" class="contrato-preview">
-  <h3 class="title">CONTRATO DE ARRENDAMIENTO</h3>
+<h2>📄 Vista previa del documento</h2>
 
-  <p>
-    En la ciudad de Lima, a <strong>{{ contrato.fechaInicio || '___' }}</strong>,
-    se celebra el presente contrato de arrendamiento entre la Sra./Sr.
-    <strong>{{ contrato.arrendador || '________' }}</strong> (arrendador) y la Sra./Sr.
-    <strong>{{ contrato.arrendatario || '__________' }}</strong> (arrendatario).
-  </p>
-
-  <p>
-    El arrendador da en alquiler al arrendatario el inmueble ubicado en
-    <strong>{{ contrato.direccion || '_____________' }}</strong>, por un monto mensual de
-    <strong>S/ {{ contrato.monto || '___' }}</strong>. El contrato inicia el
-    <strong>{{ contrato.fechaInicio || '___' }}</strong> y tendrá una duración de
-    <strong>{{ contrato.duracion || '___' }}</strong> meses.
-  </p>
-
-  <p>
-    Ambas partes declaran su conformidad y firman el presente contrato en señal de aceptación.
-  </p>
-
-  <div class="firma">
-    <p>Arrendador</p>
-    <p>Arrendatario</p>
+<!-- Si hay campos -->
+<div *ngIf="(campos$ | async)?.length! > 0" class="campos-container">
+  <div *ngFor="let field of (campos$ | async) ?? []" class="campo">
+    <strong>{{ field.label }}:</strong> {{ field.value || '...' }}
   </div>
 </div>
+
+<!-- Si es texto -->
+<div *ngIf="((campos$ | async)?.length ?? 0) === 0 && (contenido$ | async)">
+  <pre class="texto-previa">{{ contenido$ | async }}</pre>
+</div>
+
+<!-- Mensaje si no hay nada -->
+<div *ngIf="((campos$ | async)?.length ?? 0) === 0 && !(contenido$ | async)">
+  <p class="no-doc">No hay documento cargado.</p>
+</div>
+
+
+
+
+
+
 

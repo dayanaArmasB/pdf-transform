@@ -1,53 +1,56 @@
-/* contrato.component.css */
-
-.contrato-preview {
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  padding: 30px;
-  color: #000;
-  max-width: 800px;
-  margin: 20px auto;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: white;
-}
-
-.title {
+h2 {
+  font-size: 1.6rem;
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-h3 {
-  color: #3a5e81;
-}
-
-.contrato-preview p {
+  color: #2c3e50;
   margin-bottom: 20px;
-  text-align: justify;
+  font-weight: 600;
 }
 
-.contrato-preview strong {
-  font-weight: bold;
-}
-
-.firma {
-  margin-top: 60px;
+.campos-container {
   display: flex;
-  justify-content: space-between;
-  padding: 0 40px;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.firma p {
-  text-align: center;
-  width: 40%;
+.campo {
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  color: #333;
 }
 
-.firma p::before {
-  content: '';
+.campo strong {
+  color: #4CAF50;
+}
+
+.texto-previa {
   display: block;
-  margin: 0 auto 10px auto;
-  width: 100%;
-  border-top: 1px solid #000;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #fdfdfd;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.no-doc {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  margin-top: 15px;
 }

@@ -7,11 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class DocumentoService {
 
- private jsonURL = 'assets/documentos.json';
+   private readonly apiUrl = 'http://localhost:3000/api/pdf/text';
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
-  getDocumentos(): Observable<any> {
-    return this.http.get<any>(this.jsonURL);
+  uploadPdf(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post(`${this.apiUrl}/upload`, formData);
   }
 }

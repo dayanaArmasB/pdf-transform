@@ -10,10 +10,10 @@ import { Component, inject, OnInit } from '@angular/core';
   styleUrl: './modelos-documentos.component.css'
 })
 export class ModelosDocumentosComponent implements OnInit {
-modelos: any[] = [];
+  modelos: any[] = [];
   router: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.http.get<any[]>('assets/data/modelos-documentos.json').subscribe(data => {
