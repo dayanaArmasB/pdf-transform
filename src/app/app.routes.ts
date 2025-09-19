@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { NosotrosComponent } from './Components/nosotros/nosotros.component';
+import { NosotrosComponent } from './Components/nosotros/nosotros.component'; 
 import { ModelosDocumentosComponent } from './Components/modelos-documentos/modelos-documentos.component';
 import { DocumentoComponent } from './Components/documento/documento.component';
 

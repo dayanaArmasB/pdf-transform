@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { VistaPreviaComponent } from '../vista-previa/vista-previa.component';
-import { DocumentoStateService } from '../../services/documento-state.service';
+import { DocumentoStateService } from '../../core/services/documento-state.service';
 
 @Component({
   selector: 'app-formulario',

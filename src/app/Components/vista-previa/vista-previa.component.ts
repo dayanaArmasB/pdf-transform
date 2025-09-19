@@ -3,7 +3,7 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 import { FormsModule } from '@angular/forms';
 import jsPDF from 'jspdf';
 import * as pdfjsLib from 'pdfjs-dist';
-import { DocumentoStateService } from '../../services/documento-state.service';
+import { DocumentoStateService } from '../../core/services/documento-state.service';
 (pdfjsLib as any).GlobalWorkerOptions.workerSrc = 'assets/pdfjs/pdf.worker.min.js';
 
 

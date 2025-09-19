@@ -6,6 +6,14 @@ h2 {
   font-weight: 600;
 }
 
+/* 🔑 Contenedor con altura fija y scroll */
+.contenedor-previa {
+  max-height: 500px;        /* altura máxima */
+  overflow-y: auto;         /* scroll vertical */
+  padding-right: 10px;      /* deja espacio para que el scroll no tape texto */
+}
+
+/* Cuando hay campos */
 .campos-container {
   display: flex;
   flex-direction: column;
@@ -32,6 +40,7 @@ h2 {
   color: #4CAF50;
 }
 
+/* Cuando es texto */
 .texto-previa {
   display: block;
   white-space: pre-wrap;
@@ -48,9 +57,11 @@ h2 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+/* Mensaje vacío */
 .no-doc {
   text-align: center;
   color: #999;
   font-style: italic;
   margin-top: 15px;
 }
+

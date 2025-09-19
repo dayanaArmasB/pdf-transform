@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DocumentoService } from '../../services/documento.service';
-import { DocumentoStateService } from '../../services/documento-state.service';
+import { DocumentoService } from '../../core/services/documento.service';
+import { DocumentoStateService } from '../../core/services/documento-state.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { VistaPreviaComponent } from '../vista-previa/vista-previa.component';

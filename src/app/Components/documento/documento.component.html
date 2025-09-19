@@ -1,5 +1,13 @@
-<h2>Subir documento PDF</h2>
-<input type="file" (change)="onFileSelected($event)" accept="application/pdf" />
+<div class="contenedor-documento">
+  <!-- Subida de documento -->
+  <div class="subida">
+    <h2>Subir documento PDF</h2>
+    <input type="file" (change)="onFileSelected($event)" accept="application/pdf" />
+  </div>
 
-<!-- Aquí usamos el nuevo componente de vista previa -->
-<app-vista-previa></app-vista-previa>
+  <!-- Vista previa -->
+  <div class="vista">
+    <app-vista-previa></app-vista-previa>
+  </div>
+</div>
+
