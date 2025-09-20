@@ -1,0 +1,35 @@
+
+/* auth-layout.component.css */
+.auth-layout {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Patrón inclinado */
+.auth-layout::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 160%;
+  height: 160%;
+
+  background-image: url('/assets/img/pattern.png');
+  background-repeat: repeat;
+  background-size: 50px 50px;
+  opacity: 0.5;
+  transform: rotate(15deg); /* inclina el patrón */
+  pointer-events: none;
+  z-index: 0; /* asegúrate que quede detrás */
+}
+
+/* Hace que el contenido (el form) esté por encima */
+.auth-layout > * {
+  position: relative;
+  z-index: 1;
+}
+

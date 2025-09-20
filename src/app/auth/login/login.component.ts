@@ -38,15 +38,15 @@ ngOnInit() {
     }
 
     // 👇 Por ahora, simular login con cualquier credencial
-    this.router.navigate(['/catalogo']);
+    this.router.navigate(['/nosotros']);
   }
 
   goToRegister() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/auth/register']);
   }
 
   goToRecover() {
-    this.router.navigate(['/recover']);
+    this.router.navigate(['/auth/recover']);
   }
 
   togglePasswordVisibility() {

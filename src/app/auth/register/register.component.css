@@ -1,10 +1,4 @@
-.register-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #f4f6f7;
-}
+
 
 .register-box {
   background: #fff;
