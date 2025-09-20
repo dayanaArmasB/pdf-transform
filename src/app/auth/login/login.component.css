@@ -1,0 +1,234 @@
+/* Página completa */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #114672, #4982b8);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Caja del login */
+.login-box {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* Grupos */
+.form-group {
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #114672;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4982b8;
+}
+
+/* Estados */
+.valid {
+  border-color: #28a745;
+}
+.invalid {
+  border-color: #dc3545;
+}
+.error {
+  font-size: 0.85rem;
+  color: #dc3545;
+  margin-top: 4px;
+}
+
+/* Password wrapper */
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.password-wrapper input {
+  flex: 1;
+}
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: -35px;
+  padding: 0;
+}
+
+/* Botones */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+}
+.btn.primary {
+  background: #114672;
+  color: white;
+}
+.btn.primary:hover {
+  background: #0d3557;
+}
+.btn.secondary {
+  background: #f0f0f0;
+  color: #333;
+}
+.btn.secondary:hover {
+  background: #a9a6a6;
+  
+}
+
+/* Link recuperar */
+.recover-link {
+  margin-top: 1rem;
+}
+.recover-link a {
+  color: #114672;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.recover-link a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #eef2f3;
+}
+
+.login-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  width: 360px;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form-group input.valid {
+  border-color: #28a745;
+}
+
+.form-group input.invalid {
+  border-color: #dc3545;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* Password con botón */
+.password-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+}
+
+.toggle-btn {
+  margin-left: 0.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Botones */
+.btn {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: none;
+  margin-top: 0.6rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: #28a745;
+  color: white;
+}
+
+.btn.primary:disabled {
+  background: #a8d5b8;
+  cursor: not-allowed;
+}
+
+.btn.secondary {
+  background: #2c3e50;
+  color: white;
+}
+
+.recover-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.recover-link a {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+

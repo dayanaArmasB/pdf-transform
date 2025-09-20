@@ -1,1 +1,71 @@
-<p>register works!</p>
+<div class="register-page">
+  <div class="register-box">
+    <h2>📝 Crear cuenta</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()" novalidate>
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Correo</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="ejemplo@email.com"
+          [class.valid]="registerForm.get('email')?.valid && registerForm.get('email')?.touched"
+          [class.invalid]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+        />
+        <div class="error" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+          {{ formUtils.getFieldError(registerForm, 'email') }}
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            placeholder="Crea una contraseña"
+            [class.valid]="registerForm.get('password')?.valid && registerForm.get('password')?.touched"
+            [class.invalid]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+          />
+          <button type="button" class="toggle-btn" (click)="togglePasswordVisibility()">
+            {{ showPassword ? '🙈' : '👁️' }}
+          </button>
+        </div>
+        <div class="error" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+          {{ formUtils.getFieldError(registerForm, 'password') }}
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar contraseña</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          formControlName="confirmPassword"
+          placeholder="Repite tu contraseña"
+          [class.valid]="registerForm.get('confirmPassword')?.valid && registerForm.get('confirmPassword')?.touched"
+          [class.invalid]="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched"
+        />
+        <div class="error" *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched">
+          {{ formUtils.getFieldError(registerForm, 'confirmPassword') }}
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <button type="submit" class="btn primary" [disabled]="registerForm.invalid">
+        Registrarse
+      </button>
+      <button type="button" class="btn secondary" (click)="goToLogin()">
+        Iniciar Sesión
+      </button>
+    </form>
+  </div>
+</div>
+
+
+

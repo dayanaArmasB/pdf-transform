@@ -1,1 +1,33 @@
-<p>recover works!</p>
+<div class="recover-page">
+  <div class="recover-box">
+    <h2>📩 Recuperar contraseña</h2>
+
+    <form [formGroup]="recoverForm" (ngSubmit)="onRecover()" novalidate>
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Correo</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="ejemplo@correo.com"
+          [class.valid]="recoverForm.get('email')?.valid && recoverForm.get('email')?.touched"
+          [class.invalid]="recoverForm.get('email')?.invalid && recoverForm.get('email')?.touched"
+        />
+        <div class="error" *ngIf="recoverForm.get('email')?.invalid && recoverForm.get('email')?.touched">
+          {{ formUtils.getFieldError(recoverForm, 'email') }}
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <button type="submit" class="btn primary" [disabled]="recoverForm.invalid">
+        Enviar enlace
+      </button>
+      <button type="button" class="btn secondary" (click)="goToLogin()">
+        Iniciar sesión
+      </button>
+    </form>
+  </div>
+</div>
+
+
