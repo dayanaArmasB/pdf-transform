@@ -4,11 +4,13 @@ import { DocumentoStateService } from '../../core/services/documento-state.servi
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { VistaPreviaComponent } from '../vista-previa/vista-previa.component';
+import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-documento',
   standalone: true,
-  imports: [CommonModule, FormsModule,VistaPreviaComponent],
+  imports: [CommonModule, FormsModule,VistaPreviaComponent,NavbarComponent,FooterComponent],
   templateUrl: './documento.component.html',
   styleUrl: './documento.component.css'
 })
