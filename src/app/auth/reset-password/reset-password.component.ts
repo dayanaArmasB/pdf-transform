@@ -47,7 +47,7 @@ export class ResetPasswordComponent {
     console.log('Nueva contraseña:', this.resetForm.value.password, 'con token:', this.token);
 
     // Simulación: redirigimos al login
-    this.router.navigate(['/login'], {
+    this.router.navigate(['/auth/login'], {
       queryParams: { resetSuccess: true },
     });
   }

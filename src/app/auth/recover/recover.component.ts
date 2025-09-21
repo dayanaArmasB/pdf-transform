@@ -31,10 +31,10 @@ fb = inject(FormBuilder);
     console.log('Correo de recuperación enviado a:', this.recoverForm.value.email);
 
     // Redirigir a reset-password simulando el link con token
-    this.router.navigate(['/reset-password'], { queryParams: { token: 'fakeToken123' } });
+    this.router.navigate(['/auth/reset-password'], { queryParams: { token: 'fakeToken123' } });
   }
   goToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['auth/login']);
   }
   
 }
